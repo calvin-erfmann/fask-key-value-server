@@ -15,6 +15,8 @@ import io.ktor.server.websocket.pingPeriod
 import io.ktor.server.websocket.timeout
 import kotlinx.serialization.json.Json
 import org.calvin.erfmann.api.plugins.configureRouting
+import org.calvin.erfmann.stuff.authService
+import org.calvin.erfmann.theGoodStuff.PoolManager
 import java.time.Duration
 
 class apiServ {
@@ -23,7 +25,8 @@ class apiServ {
 
 
 
-
+    var authService = authService("password")
+    var poolManager = PoolManager()
 
 
 
@@ -45,7 +48,8 @@ class apiServ {
             masking = false
         }
         configureRouting(
-
+          authService,
+            poolManager
         )
     }
 }

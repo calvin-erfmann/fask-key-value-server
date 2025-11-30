@@ -5,6 +5,10 @@ import io.ktor.server.response.respond
 import io.ktor.server.routing.Route
 import io.ktor.server.routing.get
 import io.ktor.server.routing.route
+import kotlinx.serialization.Serializable
+
+
+
 
 fun Route.helloRoutes() {
     route("/hello") {

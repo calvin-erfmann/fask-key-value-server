@@ -23,6 +23,13 @@ class Pool(initName: String) {
         }
     }
 
+    fun updateValueValue(key: String, newValue: String) {
+        val value = values[key]
+        if (value != null) {
+            value.setValueValue(newValue)
+        }
+    }
+
     fun getVersion(key: String, version: Long): String? {
         val value = values[key]
         return value?.getVersion(version)

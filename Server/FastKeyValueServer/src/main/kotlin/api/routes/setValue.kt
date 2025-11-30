@@ -28,6 +28,7 @@ fun Route.setValue(authService: authService, poolManager: PoolManager) {
                 call.respond(mapOf("status" to "success"))
             } else {
                 poolManager.createPool(request.pool).setValueValue(request.key, request.value)
+                call.respond(mapOf("status" to "success"))
             }
         } else {
             call.respond(mapOf("error" to "Invalid token"))
